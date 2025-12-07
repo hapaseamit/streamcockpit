@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>streamcockpit.com is for sale</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg-color: #0f172a;
+        --card-bg: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --accent: #38bdf8;
+        --accent-hover: #0ea5e9;
+        --instagram: #e1306c;
+        --x-twitter: #ffffff;
+        --success: #22c55e;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+        display: grid;
+        gap: 20px;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      /* --- Header / Title Section --- */
+      .header-section {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .status-badge {
+        background-color: var(--accent);
+        color: var(--bg-color);
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      /* --- Cards Generic Styles --- */
+      .card {
+        background-color: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+        border-color: rgba(56, 189, 248, 0.2);
+      }
+
+      /* --- Domain Hero Card --- */
+      .domain-card {
+        text-align: center;
+        padding: 50px 20px;
+        background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+      }
+
+      h1 {
+        font-size: clamp(1.8rem, 5vw, 3.5rem);
+        font-weight: 800;
+        background: linear-gradient(to right, #fff, #94a3b8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+      }
+
+      .tagline {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      /* --- Social Grid --- */
+      .social-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .social-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .icon-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .instagram .icon-circle {
+        color: var(--instagram);
+      }
+      .x-twitter .icon-circle {
+        color: var(--x-twitter);
+      }
+
+      .social-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .availability {
+        color: var(--success);
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .username {
+        font-family: monospace;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 4px 8px;
+        border-radius: 4px;
+        color: var(--text-muted);
+        margin-top: 10px;
+        font-size: 0.95rem;
+      }
+
+      /* --- Contact Card --- */
+      .contact-card {
+        text-align: center;
+      }
+
+      .contact-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .email-box {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 15px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s;
+        position: relative;
+        border: 1px solid rgba(56, 189, 248, 0.1);
+      }
+
+      .email-box:hover {
+        background: rgba(56, 189, 248, 0.1);
+        border-color: var(--accent);
+      }
+
+      .email-text {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--accent);
+        margin-right: 15px;
+      }
+
+      .copy-icon {
+        color: var(--text-muted);
+      }
+
+      .tooltip {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--success);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+      }
+
+      .tooltip.show {
+        opacity: 1;
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 600px) {
+        .social-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .card {
+          padding: 20px;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header-section">
+        <span class="status-badge">Premium Domain For Sale</span>
+      </header>
+
+      <div class="card domain-card">
+        <h1>streamcockpit.com</h1>
+        <p class="tagline">The perfect command center for creators.</p>
+      </div>
+
+      <div class="social-grid">
+        <div class="card social-card instagram">
+          <div class="icon-circle">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <div class="social-title">Instagram</div>
+          <div class="availability">
+            <i class="fa-solid fa-check-circle"></i> Username Available
+          </div>
+          <div class="username">@streamcockpit</div>
+        </div>
+
+        <div class="card social-card x-twitter">
+          <div class="icon-circle">
+            <i class="fa-brands fa-x-twitter"></i>
+          </div>
+          <div class="social-title">X (Twitter)</div>
+          <div class="availability">
+            <i class="fa-solid fa-check-circle"></i> Username Available
+          </div>
+          <div class="username">@streamcockpit</div>
+        </div>
+      </div>
+
+      <div class="card contact-card">
+        <h2>Interested? Get in touch.</h2>
+        <div class="email-box" id="emailBox" onclick="copyEmail()">
+          <span class="tooltip" id="copyTooltip">Copied!</span>
+          <span class="email-text">mail@streamcockpit.com</span>
+          <i class="fa-regular fa-copy copy-icon"></i>
+        </div>
+        <p
+          style="margin-top: 15px; color: var(--text-muted); font-size: 0.9rem"
+        >
+          Click the address above to copy
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function copyEmail() {
+        const email = "mail@streamcockpit.com";
+        const tooltip = document.getElementById("copyTooltip");
+
+        // Copy to clipboard API
+        navigator.clipboard
+          .writeText(email)
+          .then(() => {
+            // Show tooltip
+            tooltip.classList.add("show");
+
+            // Hide tooltip after 2 seconds
+            setTimeout(() => {
+              tooltip.classList.remove("show");
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy: ", err);
+          });
+      }
+    </script>
+  </body>
+</html>
