@@ -16,8 +16,11 @@
         --text-muted: #94a3b8;
         --accent: #38bdf8;
         --accent-hover: #0ea5e9;
+        /* Social Colors */
         --instagram: #e1306c;
         --x-twitter: #ffffff;
+        --youtube: #ff0000;
+        --facebook: #1877f2;
         --success: #22c55e;
       }
 
@@ -101,6 +104,27 @@
       .tagline {
         color: var(--text-muted);
         font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      /* --- Buy Button --- */
+      .buy-btn {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--bg-color);
+        padding: 14px 35px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 6px -1px rgba(56, 189, 248, 0.3);
+      }
+
+      .buy-btn:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.4);
       }
 
       /* --- Social Grid --- */
@@ -130,11 +154,18 @@
         background: rgba(255, 255, 255, 0.05);
       }
 
+      /* Brand Colors */
       .instagram .icon-circle {
         color: var(--instagram);
       }
       .x-twitter .icon-circle {
         color: var(--x-twitter);
+      }
+      .youtube .icon-circle {
+        color: var(--youtube);
+      }
+      .facebook .icon-circle {
+        color: var(--facebook);
       }
 
       .social-title {
@@ -249,7 +280,15 @@
 
       <div class="card domain-card">
         <h1>streamcockpit.com</h1>
-        <p class="tagline">The perfect command center for creators.</p>
+        <p class="tagline">The perfect command center for streamers.</p>
+
+        <a
+          href="https://www.namecheap.com/market/buynow/streamcockpit.com/?collection_ref=buynow"
+          class="buy-btn"
+          target="_blank"
+        >
+          Buy Now
+        </a>
       </div>
 
       <div class="social-grid">
@@ -259,7 +298,8 @@
           </div>
           <div class="social-title">Instagram</div>
           <div class="availability">
-            <i class="fa-solid fa-check-circle"></i> Username Available
+            <i class="fa-solid fa-check-circle"></i> Username Available Free
+            with Domain
           </div>
           <div class="username">@streamcockpit</div>
         </div>
@@ -270,7 +310,32 @@
           </div>
           <div class="social-title">X (Twitter)</div>
           <div class="availability">
-            <i class="fa-solid fa-check-circle"></i> Username Available
+            <i class="fa-solid fa-check-circle"></i> Username Available Free
+            with Domain
+          </div>
+          <div class="username">@streamcockpit</div>
+        </div>
+
+        <div class="card social-card youtube">
+          <div class="icon-circle">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <div class="social-title">YouTube</div>
+          <div class="availability">
+            <i class="fa-solid fa-check-circle"></i> Username Available Free
+            with Domain
+          </div>
+          <div class="username">@streamcockpit</div>
+        </div>
+
+        <div class="card social-card facebook">
+          <div class="icon-circle">
+            <i class="fa-brands fa-facebook"></i>
+          </div>
+          <div class="social-title">Facebook</div>
+          <div class="availability">
+            <i class="fa-solid fa-check-circle"></i> Username Available Free
+            with Domain
           </div>
           <div class="username">@streamcockpit</div>
         </div>
